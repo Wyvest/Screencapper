@@ -151,7 +151,7 @@ class ScreenshotPreviewHud : Hud("screenshot_preview.json", "Screenshot preview"
         val preview = active?.takeIf { visible() }
         if (preview == null) hovered = null
         drawnAt = System.currentTimeMillis()
-        if (preview == null && isReal && !HudManager.isEditing) return
+        if (preview == null && isReal && !HudManager.isEditorOpen) return
 
         val unit = if (staticW > 0f) width / staticW else 1f
         if (showBackground) rect(x, y, width, height, PolyColor(bgColor, bgChroma, bgChromaSpeed), bgRadius * unit)
